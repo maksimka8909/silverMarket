@@ -25,4 +25,6 @@ urlpatterns = [
     path('bucket', views.bucket),
     path('contacts', views.contacts),
 
+    path('bucket/addProduct/<int:productId>/', views.addProduct, name='addProduct'),
+
 ]
