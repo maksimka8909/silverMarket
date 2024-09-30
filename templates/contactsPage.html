@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
+
+<div class="container">
+  <ul class="nav bg-info">
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/">Главная</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/bucket">Корзина</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link link-dark" href="/contacts">О нас</a>
+    </li>
+  </ul>
+
+  {% block content %}
+  {% endblock %}
+</div>
+<!-- About 1 - Bootstrap Brain Component -->
+<section class="py-5">
+ <div class="container">
+  <div class="row align-items-center gx-4">
+   <div class="col-md-5">
+    <div class="ms-md-2 ms-lg-5"><img class="img-fluid rounded-3" src="https://freefrontend.dev/assets/square.png"></div>
+   </div>
+   <div class="col-md-6 offset-md-1">
+    <div class="ms-md-2 ms-lg-5">
+     <h2 class="display-5 fw-bold">Кто мы?</h2>
+     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+     <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+</body>
+</html>
