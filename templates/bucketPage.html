@@ -7,8 +7,7 @@
   {% bootstrap_javascript %}
 </head>
 <body>
-
-<div class="container">
+<div class="justify-content-center">
   <ul class="nav bg-info">
     <li class="nav-item">
       <a class="nav-link link-light" href="/">Главная</a>
@@ -25,6 +24,10 @@
   {% endblock %}
 </div>
 <section style="background-color: #eee;">
+<form method="post" action="{% url 'clearBucket' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary btn m-3">Очистить</button>
+</form>
   <div class="container py-5">
       {% for bucket in buckets %}
 
