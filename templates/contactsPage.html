@@ -5,38 +5,183 @@
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
+<style>
+        body {
+            height: auto;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            background-color: #807AD5;
+            z-index: -1;
+            transform: skewY(-30deg);
+            transform-origin: top left;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .header nav a {
+            font-size: 24px;
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s ease;
+        }
+
+        .header nav a:hover {
+            color: blue;
+        }
+
+        .now-open {
+            font-size: 36px;
+            font-weight: bold;
+            color: #A085FF;
+            margin-left: 20px;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f5f5f5;
+            position: relative;
+        }
+
+        .hero-section .text-content {
+            max-width: 50%;
+        }
+
+        .hero-section .text-content img {
+            width: 250px;
+            height: auto;
+        }
+
+        .products {
+            height: auto;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 140px;
+        }
+
+        .product {
+            text-align: center;
+            margin: 0 20px;
+            width: 400px;
+            height: auto;
+        }
+
+        .product img {
+            width: 150px;
+            height: auto;
+        }
+
+        .product p {
+            font-size: 14px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .add-to-cart {
+            background-color: #0045FF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #0033cc;
+            transform: scale(1.1);
+        }
+
+        .footer {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer img {
+            width: 40px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .footer img:hover {
+            transform: scale(1.1);
+        }
+        
+        .btn-text-right{
+            text-align: right;
+        }
+    </style>
 </head>
 <body>
-
-<div class="justify-content-center">
-  <ul class="nav bg-info">
-    <li class="nav-item">
-      <a class="nav-link link-light" href="/">Главная</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link link-light" href="/bucket">Корзина</a>
-    </li>
-      <li class="nav-item">
-      <a class="nav-link link-dark" href="/contacts">О нас</a>
-    </li>
-  </ul>
-
-  {% block content %}
-  {% endblock %}
-</div>
-<!-- About 1 - Bootstrap Brain Component -->
+<header class="header">
+        <div>
+            <h1>Silver Market</h1>
+            <p>FOOD MEDIA INC.</p>
+        </div>
+        <nav>
+            <a href="/">Каталог</a>
+            <a href="/bucket">Корзина</a>
+            <a href="/contacts">О нас</a>
+            <span class="now-open">Now Open!</span>
+        </nav>
+</header>
 <section class="py-5">
  <div class="container">
   <div class="row align-items-center gx-4">
-   <div class="col-md-5">
-    <div class="ms-md-2 ms-lg-5"><img class="img-fluid rounded-3" src="{{ MEDIA_URL }}images/logo.png"></div>
-   </div>
    <div class="col-md-6 offset-md-1">
     <div class="ms-md-2 ms-lg-5">
      <h2 class="display-5 fw-bold">Кто мы?</h2>
-     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-     <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+     <p class="lead">Добро пожаловать в Silver Market — ваш надёжный партнёр в мире качественных продуктов! Наш магазин был основан в 2023 году двумя друзьями и предпринимателями — Кузнецовым Максимом и Калининым Сергеем, которые стремились создать место, где каждый покупатель сможет найти только лучшие и свежие продукты. Оба основателя имеют богатый опыт в сфере торговли, что позволило им разработать уникальную концепцию магазина, сочетающего высокие стандарты качества и доступные цены. Сегодня Silver Market — это не просто магазин, а пространство для заботы о вашем питании и здоровье. Мы гордимся своим ассортиментом и стремимся сделать ваши покупки удобными и приятными. Ваш комфорт и удовлетворение — наша главная цель!</p>
     </div>
+   </div>
+      <div class="col-md-5">
+    <div class="ms-md-2 ms-lg-5"><img class="img-fluid rounded-3" src="{{ MEDIA_URL }}images/logo.png"></div>
    </div>
   </div>
  </div>
